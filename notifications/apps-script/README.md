@@ -16,6 +16,7 @@ Configured on 1 November 2026 under `haffizol.suf@gmail.com`, running as the own
 ## Behaviour and limits
 
 - One email attempt per browser tab/session; this is not a unique-person counter.
+- The footer's **Ignore this browser** button saves an exclusion in local storage and syncs it across open tabs. It persists until reversed or site data is cleared. Use `https://haffizol.github.io/haffizol-portfolio/?ignore-visits=1` on each personal browser/device to enable the exclusion before a visit event is sent. This link should not be shared as the normal portfolio link.
 - Fixed recipient: `haffizol.suf@gmail.com`. Requests cannot choose a recipient, subject or email body.
 - Maximum 50 notifications per Malaysia calendar day and 5 per minute across the script. These application limits prevent unlimited mail and may suppress visits. Google's own quotas also apply.
 - A script lock serializes checks and sending. Duplicate event IDs within a Malaysia calendar day are ignored; the state is reset on the next day.
