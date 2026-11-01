@@ -27,11 +27,11 @@ Push changes to `main` to update the site after Pages is configured.
 
 ## Visitor email notifications
 
-The browser integration is **disabled** in `docs/visitor-config.js`. Hosting on GitHub Pages does not activate email delivery.
+The browser integration is **enabled** in `docs/visitor-config.js` and connected to the deployed Google Apps Script web app.
 
-The separate Cloudflare Worker and Resend setup is in [`notifications/SETUP.md`](notifications/SETUP.md). Its instructions refer to `dist/visitor-config.js` in the working project; in this repository that file is `docs/visitor-config.js`.
+The selected service is now Google Apps Script. Server code and setup instructions are in [`notifications/apps-script/`](notifications/apps-script/README.md). The previous Cloudflare/Resend implementation is retained as an unused alternative.
 
-Set the published origin to `https://haffizol.github.io` when configuring the notification service. Store email API keys and recipient settings as Worker secrets, never in this repository. Enable the browser integration only after the service is deployed and a test email has arrived.
+The Apps Script recipient is fixed to the portfolio owner's email. It limits notifications to 50 per Malaysia calendar day and 5 per minute. No email passwords or API keys are stored in the website. The browser sends one event attempt per tab/session; email delivery is verified in Apps Script and the owner's inbox rather than through the opaque cross-origin browser response.
 
 ## Local preview
 
